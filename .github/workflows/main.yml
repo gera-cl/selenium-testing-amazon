@@ -16,7 +16,7 @@ jobs:
           cache: maven
       - name: Install Google Chrome
         run: |
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -q
           sudo apt install ./google-chrome-stable_current_amd64.deb
       - name: Maven Test
-        run: mvn clean test
+        run: mvn -B clean test
