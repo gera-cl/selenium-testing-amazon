@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="AmazonTestSuite" parallel="methods" thread-count="5">
+    <test name="NavbarTest">
+        <classes>
+            <class name="cl.gera.selenium.amzn.tests.NavbarTest"/>
+        </classes>
+    </test>
+</suite>
