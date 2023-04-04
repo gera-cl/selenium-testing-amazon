@@ -17,17 +17,20 @@ public class BaseTest {
 
     public BaseTest() {
         WebDriverManager.chromedriver().setup();
+        options.addArguments("--no-sandbox");
         options.addArguments("--headless=new");
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--window-size=1920,1200");
+        // options.addArguments("--window-size=1920,1200");
         options.addArguments("--disable-extensions");
         options.addArguments("--disable-infobars");
-        options.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36");
+        options.addArguments("--disable-dev-shm-usage");
+        // options.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36");
     }
 
     @BeforeMethod
     public void beforeTests(Method method) {
         ChromeDriver driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
         drivers.put(method.getName(), driver);
     }
 
