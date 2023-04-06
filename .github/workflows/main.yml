@@ -20,3 +20,7 @@ jobs:
           sudo apt install ./google-chrome-stable_current_amd64.deb
       - name: Maven Test
         run: mvn -B clean test
+      - uses: actions/upload-artifact@v3
+        with:
+          name: extent-report
+          path: target/extent-reports/Index.html
