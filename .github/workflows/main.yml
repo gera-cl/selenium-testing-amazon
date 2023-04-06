@@ -18,9 +18,11 @@ jobs:
         run: |
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -q
           sudo apt install ./google-chrome-stable_current_amd64.deb
+      - name: Maven Build
+        run: mvn -B clean verify -Dmaven.test.skip=true
       - name: Maven Test
         run: mvn -B clean test
       - uses: actions/upload-artifact@v3
         with:
           name: extent-report
-          path: target/extent-reports/Index.html
+          path: ./target/extent-reports/Index.html
