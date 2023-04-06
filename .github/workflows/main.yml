@@ -23,6 +23,7 @@ jobs:
       - name: Maven Test
         run: mvn -B clean test
       - uses: actions/upload-artifact@v3
+        if: ${{ always() }}
         with:
           name: extent-report
           path: ./target/extent-reports/Index.html
