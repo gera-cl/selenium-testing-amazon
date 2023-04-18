@@ -55,5 +55,5 @@ jobs:
         with:
           artifact: junit-report
           name: JUnit Tests
-          path: 'TEST-cl.gera.selenium.amzn.tests.NavbarTest.xml'
+          path: '**/*.xml'
           reporter: java-junit
