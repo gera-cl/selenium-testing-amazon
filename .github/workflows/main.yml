@@ -40,20 +40,25 @@ jobs:
         with:
           name: extent-report
           path: ./target/extent-reports/Index.html
-      - name: Upload Junit Report
-        uses: actions/upload-artifact@v3
-        if: success() || failure()
-        with:
-          name: junit-report
-          path: ./target/surefire-reports/junitreports/
-  report:
-    runs-on: ubuntu-latest
-    needs: test
-    if: success() || failure()
-    steps:
+#      - name: Upload Junit Report
+#        uses: actions/upload-artifact@v3
+#        if: success() || failure()
+#        with:
+#          name: junit-report
+#          path: ./target/surefire-reports/junitreports/
       - uses: dorny/test-reporter@v1
         with:
-          artifact: junit-report
           name: JUnit Tests
-          path: '**/*.xml'
+          path: ./target/surefire-reports/junitreports/*.xml
           reporter: java-junit
+#  report:
+#    runs-on: ubuntu-latest
+#    needs: test
+#    if: success() || failure()
+#    steps:
+#      - uses: dorny/test-reporter@v1
+#        with:
+#          artifact: junit-report
+#          name: JUnit Tests
+#          path: '**/*.xml'
+#          reporter: java-junit
