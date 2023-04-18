@@ -44,7 +44,7 @@ jobs:
         if: success() || failure()
         with:
           name: junit-report
-          path: ./target/surefire-reports/junitreports
+          path: ./target/surefire-reports/junitreports/*.xml
   report:
     runs-on: ubuntu-latest
 
