@@ -38,8 +38,6 @@
   </p>
 </div>
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -62,6 +60,7 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 ### Built With
@@ -78,10 +77,8 @@
 
 
 <!-- GETTING STARTED -->
-## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+## Getting Started
 
 ### Prerequisites
 
@@ -102,7 +99,6 @@ To get a local copy up and running follow these simple example steps.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## Test Cases
 <table>
     <thead>
@@ -121,12 +117,13 @@ To get a local copy up and running follow these simple example steps.
             <td>Verify if the language switch function is working correctly</td>
             <td>
                <details>
-                   <ol>
-                       <li>Go to the Amazon.com website</li>
-                       <li>Locate the language switch dropdown in the top right corner of the page</li>
-                       <li>Click on the dropdown and select a language different from the default language</li>
-                       <li>Verify that the language of the website has changed to the selected language</li>
-                   </ol>
+                  <summary>Steps</summary>
+                  <ol>
+                    <li>Go to the Amazon.com website</li>
+                    <li>Locate the language switch dropdown in the top right corner of the page</li>
+                    <li>Click on the dropdown and select a language different from the default language</li>
+                    <li>Verify that the language of the website has changed to the selected language</li>
+                  </ol>
                </details>
             </td>
             <td>The language of the website changes to the selected language and all elements of the page are displayed
@@ -139,13 +136,14 @@ To get a local copy up and running follow these simple example steps.
             <td>Verify if the user can change the delivery address using a US zip code</td>
             <td>
                <details>
-                   <ol>
-                       <li>Go to the Amazon.com website</li>
-                       <li>Click on the "Deliver to" section found in the top bar</li>
-                       <li>Enter a valid US zip code in the "Location" section</li>
-                       <li>Click on the "Apply" button</li>
-                       <li>Verify that the delivery address has changed to a valid address for the entered zip code</li>
-                   </ol>
+                  <summary>Steps</summary>
+                  <ol>
+                    <li>Go to the Amazon.com website</li>
+                    <li>Click on the "Deliver to" section found in the top bar</li>
+                    <li>Enter a valid US zip code in the "Location" section</li>
+                    <li>Click on the "Apply" button</li>
+                    <li>Verify that the delivery address has changed to a valid address for the entered zip code</li>
+                  </ol>
                </details>
             </td>
             <td>The delivery address changes to a valid address for the entered zip code and is displayed correctly on the
@@ -160,13 +158,14 @@ To get a local copy up and running follow these simple example steps.
             </td>
             <td>
                <details>
-                   <ol>
-                       <li>Navigate to the Amazon.com home page.</li>
-                       <li>Locate the search bar at the top of the page.</li>
-                       <li>Type in the name or keyword of the product you want to search for.</li>
-                       <li>Click on the magnifying glass icon or press the Enter key.</li>
-                       <li>Check that the search results page is displayed, showing a list of relevant products matching the search criteria.</li>
-                   </ol>
+                  <summary>Steps</summary>
+                  <ol>
+                    <li>Navigate to the Amazon.com home page.</li>
+                    <li>Locate the search bar at the top of the page.</li>
+                    <li>Type in the name or keyword of the product you want to search for.</li>
+                    <li>Click on the magnifying glass icon or press the Enter key.</li>
+                    <li>Check that the search results page is displayed, showing a list of relevant products matching the search criteria.</li>
+                  </ol>
                </details>
             </td>
             <td>The search feature should work properly and display a list of relevant products matching the search
@@ -180,12 +179,13 @@ To get a local copy up and running follow these simple example steps.
             </td>
             <td>
                <details>
-                   <ol>
-                       <li>Navigate to the Amazon.com home page.</li>
-                       <li>Locate the product list page (PLP) by either using the search bar or navigating to a category page.</li>
-                       <li>Click on a product from the list.</li>
-                       <li>Check that the product details page (PDP) is displayed, showing the product's title, description, images, price, and other relevant information.</li>
-                   </ol>
+                  <summary>Steps</summary>
+                  <ol>
+                    <li>Navigate to the Amazon.com home page.</li>
+                    <li>Locate the product list page (PLP) by either using the search bar or navigating to a category page.</li>
+                    <li>Click on a product from the list.</li>
+                    <li>Check that the product details page (PDP) is displayed, showing the product's title, description, images, price, and other relevant information.</li>
+                  </ol>
                </details>
             </td>
             <td>The product details page should be displayed and show all relevant information about the product, such as
@@ -198,13 +198,14 @@ To get a local copy up and running follow these simple example steps.
             <td>Verify that users can select product variations in the Product Detail Page (PDP).</td>
             <td>
                <details>
-                   <ol>
-                       <li>Navigate to the PDP of a product that has variations (e.g. different sizes or colors).</li>
-                       <li>Locate the variation selector (e.g. dropdown menu or color swatches).</li>
-                       <li>Click on the variation selector and select a variation.</li>
-                       <li>Verify that the product image and details have been updated to reflect the selected variation.</li>
-                       <li>Repeat steps 3 and 4 for each available variation, if applicable.</li>
-                   </ol>
+                  <summary>Steps</summary>
+                  <ol>
+                    <li>Navigate to the PDP of a product that has variations (e.g. different sizes or colors).</li>
+                    <li>Locate the variation selector (e.g. dropdown menu or color swatches).</li>
+                    <li>Click on the variation selector and select a variation.</li>
+                    <li>Verify that the product image and details have been updated to reflect the selected variation.</li>
+                    <li>Repeat steps 3 and 4 for each available variation, if applicable.</li>
+                  </ol>
                </details>
             </td>
             <td>The selected variation should be reflected in the product image and details. All available variations should
@@ -217,13 +218,14 @@ To get a local copy up and running follow these simple example steps.
             <td>Verify that the product is added to the cart after the user clicks the "Add to Cart" button.</td>
             <td>
                <details>
-                   <ol>
-                       <li>Navigate to the PDP of a product.</li>
-                       <li>Click the "Add to Cart" button.</li>
-                       <li>Verify that a message is displayed indicating that the product has been added to the cart.</li>
-                       <li>Click the cart icon in the top right corner of the page.</li>
-                       <li>Verify that the product appears in the cart.</li>
-                   </ol>
+                  <summary>Steps</summary>
+                  <ol>
+                    <li>Navigate to the PDP of a product.</li>
+                    <li>Click the "Add to Cart" button.</li>
+                    <li>Verify that a message is displayed indicating that the product has been added to the cart.</li>
+                    <li>Click the cart icon in the top right corner of the page.</li>
+                    <li>Verify that the product appears in the cart.</li>
+                  </ol>
                </details>
             </td>
             <td>The message confirming the product was added to the cart should be displayed, and the product should appear
@@ -238,6 +240,7 @@ To get a local copy up and running follow these simple example steps.
 
 
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
@@ -247,6 +250,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 <!-- CONTACT -->
+
 ## Contact
 
 Germán Hernández - [ghernandez94](https://linkedin.com/in/ghernandez94)
@@ -260,17 +264,23 @@ Project Link: [https://github.com/gera-cl/selenium-testing-amazon](https://githu
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/gera-cl/selenium-testing-amazon/blob/master/LICENSE
+
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/ghernandez94
+
 [product-screenshot]: images/screenshot.png
 
 [Selenium]: https://img.shields.io/static/v1?label=&message=Selenium&logo=selenium&style=for-the-badge&color=37A51F&logoColor=white
 [Selenium-url]: https://selenium.dev/
+
 [Maven]: https://img.shields.io/static/v1?label=&message=apache%20maven&logo=apachemaven&style=for-the-badge&color=c4091e
 [Maven-url]: https://maven.apache.org/
+
 [TestNG]: https://img.shields.io/static/v1?label=&message=testng&style=for-the-badge&color=feb308
 [TestNG-url]: https://testng.org/
+
 [GithubActions]: https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white
 [GithubActions-url]: https://github.com/features/actions
+
 [ExtentReports]: https://img.shields.io/static/v1?label=&message=extent%20reports&style=for-the-badge&color=4a90e2
 [ExtentReports-url]: https://extentreports.com
