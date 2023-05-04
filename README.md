@@ -33,7 +33,9 @@
 <h3 align="center">Selenium Testing - Amazon.com</h3>
 
   <p align="center">
-    A sample project of automated tests for the Amazon.com website, built with Java, Selenium, and other tools.
+   A sample project of automated tests for the Amazon.com website, built with Java, Selenium, and other tools.
+   <br>
+   <br>
   </p>
 </div>
 
