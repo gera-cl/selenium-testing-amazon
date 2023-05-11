@@ -75,3 +75,6 @@ jobs:
       - name: Deploy artifact
         id: deployment
         uses: actions/deploy-pages@v1
+      - name: Add report to summary
+        run: |
+          echo "Report: $(echo "https://${GITHUB_USER}.github.io/$(echo $GITHUB_REPOSITORY | grep -Eio '\/(.*)' | grep -Eio '[a-z]+')")$(find report -name '*.html')" >> $GITHUB_STEP_SUMMARY
