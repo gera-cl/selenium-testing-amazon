@@ -28,7 +28,7 @@ jobs:
         if: success() || failure()
         with:
           name: extent-report
-          path: ./target/extent-reports/Index.html
+          path: ./target/extent-reports/*.html
       - name: Generate Github Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()
@@ -37,3 +37,41 @@ jobs:
           path: ./target/surefire-reports/junitreports/*.xml
           reporter: java-junit
           fail-on-error: false
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: extent-report
+          path: report
+      - name: Add content to branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          keep_files: true
+          publish_branch: gh-pages
+          publish_dir: report
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: .
+          name: github-pages
+          retention-days: 1
+      - name: Deploy artifact
+        id: deployment
+        uses: actions/deploy-pages@v1
