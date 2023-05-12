@@ -79,4 +79,4 @@ jobs:
       - name: Add report to summary
         run: |
           ls -la
-          echo "Report: $(echo "https://${{GITHUB_USER}}.github.io/${{github.event.repository.name}}/$(find ./report -name '*.html')" >> $GITHUB_STEP_SUMMARY
+          echo "Report: $(echo "https://${{github.repository_owner}}.github.io/${{github.event.repository.name}}/$(find ./report -name '*.html')" >> $GITHUB_STEP_SUMMARY
