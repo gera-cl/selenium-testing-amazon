@@ -39,6 +39,7 @@ jobs:
           fail-on-error: false
   deploy:
     needs: test
+    if: success() || failure()
     runs-on: ubuntu-latest
     permissions:
       contents: write
