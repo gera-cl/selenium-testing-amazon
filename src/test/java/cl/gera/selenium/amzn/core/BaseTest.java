@@ -35,7 +35,8 @@ public class BaseTest {
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-dev-shm-usage");
         // extent reports
-        ExtentSparkReporter extentSparkReporter = new ExtentSparkReporter("target/extent-reports");
+        String reportName = "extent-report-" + System.currentTimeMillis() + ".html";
+        ExtentSparkReporter extentSparkReporter = new ExtentSparkReporter("target/extent-reports/" + reportName);
         extentReports.attachReporter(extentSparkReporter);
     }
 
