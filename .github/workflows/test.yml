@@ -57,7 +57,7 @@ jobs:
           name: extent-report
           path: report
       - name: Save report file
-        run: echo "REPORT_FILE=$(find report -name '*.html')" >> $GITHUB_ENV
+        run: echo "REPORT_FILE=$(find report -name '*.html' -exec basename {} \;)" >> $GITHUB_ENV
       - name: Add content to branch
         uses: peaceiris/actions-gh-pages@v3
         with:
