@@ -57,7 +57,10 @@ jobs:
           name: extent-report
           path: report
       - name: Save report file
-        run: export REPORT_FILE=$(find . -name '*.html')
+        run: |
+          ls -la
+          find . -name '*.html'
+          export REPORT_FILE=$(find . -name '*.html')
       - name: Add content to branch
         uses: peaceiris/actions-gh-pages@v3
         with:
