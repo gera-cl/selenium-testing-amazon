@@ -56,6 +56,8 @@ jobs:
         with:
           name: extent-report
           path: report
+      - name: Save report file
+        run: export REPORT_FILE=$(find . -name '*.html')
       - name: Add content to branch
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -78,5 +80,4 @@ jobs:
         uses: actions/deploy-pages@v1
       - name: Add report to summary
         run: |
-          ls -la
-          echo "Report: $(echo "https://${{github.repository_owner}}.github.io/${{github.event.repository.name}}/$(find ./report -name '*.html')" >> $GITHUB_STEP_SUMMARY
+          echo "Report: https://${{github.repository_owner}}.github.io/${{github.event.repository.name}}/$REPORT_FILE" >> $GITHUB_STEP_SUMMARY
