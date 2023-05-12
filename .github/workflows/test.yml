@@ -29,14 +29,6 @@ jobs:
         with:
           name: extent-report
           path: ./target/extent-reports/*.html
-      - name: Generate Github Test Report
-        uses: dorny/test-reporter@v1
-        if: success() || failure()
-        with:
-          name: JUnit Tests
-          path: ./target/surefire-reports/junitreports/*.xml
-          reporter: java-junit
-          fail-on-error: false
   deploy:
     needs: test
     if: success() || failure()
