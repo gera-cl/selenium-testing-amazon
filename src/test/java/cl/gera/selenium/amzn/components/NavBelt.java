@@ -2,6 +2,7 @@ package cl.gera.selenium.amzn.components;
 
 import cl.gera.selenium.amzn.core.BaseComponent;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -23,8 +24,16 @@ public class NavBelt extends BaseComponent {
         super(driver);
 
         // wait for the navbar visibility
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("navbar-main")));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        int retries = 1;
+        while (retries <= 3) {
+            try {
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("navbar-main")));
+            } catch (TimeoutException timeoutException) {
+                driver.navigate().refresh();
+                retries++;
+            }
+        }
 
         this.navSearchBar = new NavSearchBar(driver);
         PageFactory.initElements(driver, this);
