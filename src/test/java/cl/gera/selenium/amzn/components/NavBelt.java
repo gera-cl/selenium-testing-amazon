@@ -29,8 +29,10 @@ public class NavBelt extends BaseComponent {
         while (retries <= 3) {
             try {
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("navbar-main")));
+                break;
             } catch (TimeoutException timeoutException) {
                 driver.navigate().refresh();
+            } finally {
                 retries++;
             }
         }
