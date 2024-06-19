@@ -27,7 +27,8 @@ public class BaseTest {
     public BaseTest() {
         // chrome driver initialization
         String CHROME_VERSION = System.getenv("CHROME_VERSION");
-        WebDriverManager.chromedriver().setup().browserVersion(CHROME_VERSION);
+        System.out.println(CHROME_VERSION);
+        WebDriverManager.chromedriver().setup();
         options.addArguments("--no-sandbox");
         options.addArguments("--headless=new");
         options.addArguments("--remote-allow-origins=*");
