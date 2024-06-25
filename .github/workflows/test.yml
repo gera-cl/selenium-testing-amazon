@@ -28,7 +28,7 @@ jobs:
       - name: Run Tests
         run: mvn $MAVEN_CLI_OPTS clean test
       - name: Upload Extent Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: success() || failure()
         with:
           name: extent-report
@@ -48,31 +48,31 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: extent-report
           path: report
       - name: Save report file
         run: echo "REPORT_FILE=$(find report -name '*.html' -exec basename {} \;)" >> $GITHUB_ENV
       - name: Add content to branch
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           keep_files: true
           publish_branch: gh-pages
           publish_dir: report
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: gh-pages
       - name: Upload page artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .
           name: github-pages
           retention-days: 1
       - name: Deploy page artifact
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
       - name: Add report to summary
         run: echo "Report URL -> https://${{github.repository_owner}}.github.io/${{github.event.repository.name}}/${{env.REPORT_FILE}}" >> $GITHUB_STEP_SUMMARY
